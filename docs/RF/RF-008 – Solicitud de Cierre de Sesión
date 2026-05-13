@@ -1,0 +1,31 @@
+# RF-008 – Solicitud de Cierre de Sesión
+
+
+## Descripción
+
+El Usuario debe poder solicitar el cierre de una sesión de estacionamiento activa.
+
+El Sistema debe evaluar el estado actual del vehículo y someter la solicitud a un proceso de validación mediante inspección antes de confirmar o rechazar el cierre.
+
+
+
+## Criterios de aceptación:
+
+- El Sistema debe iniciar un proceso de validación cuando un usuario solicita cierre de sesión.
+- El Sistema debe registrar el momento en que recibe una solicitud de cierre de sesión (time_stop).
+- El sistema no debe finalizar la sesión hasta contar con una validación externa de los inspectores.
+- El Sistema debe finalizar la sesión cuando recibe confirmación de que el vehículo ya no se encuentra en el lugar indicado.
+- Si un inspector confirma que el vehículo sigue estacionado la sesión no debe finalizarse y debe considerarse como “cierre inválido” .
+- Ante un cierre inválido, El Sistema debe aplicar una transición de estado sancionatoria en función del estado previo del vehículo.
+- Ante un cierre inválido, El Sistema debe notificar al usuario que su situación es de “cierre inválido” e informarle el nuevo estado de su vehículo.
+- Si el vehículo se encuentra en estado de acarreo, El Sistema no debe permitir la finalización directa de la sesión y debe continuar el protocolo de acarreo correspondiente.
+- Al finalizar una sesión, El Sistema debe dejar disponible la información necesaria para su procesamiento en los módulos de cobros e infracciones.
+
+## Relacionados
+
+- UC-0XX – Solicitar Cierre de Sesión
+- FSM – Vehículos y Sesiones
+- DG-0XX – Flujo de Cierre de Sesión
+- RN-001 – Escalamiento Sancionatorio
+- RN-002 - Gestión de vehículos
+- RN-003 – Conservación de Estado Previo
