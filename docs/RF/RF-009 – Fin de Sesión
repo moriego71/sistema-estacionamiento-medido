@@ -1,0 +1,26 @@
+## Descripción
+
+El Sistema debe poder procesar la finalización de una sesión de estacionamiento válida.
+
+El Sistema debe poder calcular el tiempo correspondiente al último intervalo de estacionamiento.
+
+El Sistema debe poder gestionar el cobro asociado a la finalización de la sesión.
+
+El Sistema debe poder registrar la sesión como finalizada.
+
+El Sistema debe poder verificar el estado final del vehículo.
+
+El Sistema debe poder determinar si corresponde iniciar una gestión de infracción.
+
+El Sistema debe poder notificar al Usuario la finalización de la sesión.
+
+# Criterios de aceptación
+
+- El Sistema debe calcular el tiempo correspondiente al último intervalo de estacionamiento al finalizar una sesión.
+- El Sistema debe calcular el monto final asociado a la sesión.
+- El Sistema debe registrar la sesión como finalizada en la base de datos.
+- El Sistema debe dejar disponible la información necesaria para el procesamiento de cobros.
+- El Sistema debe verificar el estado final del vehículo al concluir la sesión.
+- El Sistema debe determinar si corresponde iniciar una gestión de infracción.
+- El Sistema debe notificar al Usuario la finalización de la sesión.
+- El Sistema debe registrar el resultado del procesamiento de finalización de sesión.
