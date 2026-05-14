@@ -23,9 +23,9 @@ El Sistema debe evaluar el estado actual del vehículo y someter la solicitud a 
 
 ## Relacionados
 
-- UC-0XX – Solicitar Cierre de Sesión
 - FSM – Vehículos y Sesiones
-- DG-0XX – Flujo de Cierre de Sesión
+- DG-008 – Flujo de Cierre de Sesión
+- UC-008 – Solicitar Cierre de Sesión
 - RN-001 – Escalamiento Sancionatorio
 - RN-002 - Gestión de vehículos
 - RN-003 – Conservación de Estado Previo
