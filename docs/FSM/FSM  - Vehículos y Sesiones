@@ -1,0 +1,45 @@
+# FSM  - Vehículos y Sesiones
+
+Define los estados operativos de una sesión y muestra las transiciones permitidas en función de los eventos del sistema.
+
+|     Estado    |                           Descripción                                                                     
+|               | 
+| Activo        | La sesión de estacionamiento se encuentra correctamente iniciada y en curso.                                     |
+| En Inspección | La sesión se encuentra pendiente de validación por parte de inspectores luego de una solicitud de cierre. 
+| Infracción    | El vehículo presenta una infracción asociada a un incumplimiento detectado durante una validación.        
+| Penalización  | El vehículo se encuentra en estado de penalización debido a reincidencia o incumplimientos reiterados.    
+| Acarreo       | El vehículo fue derivado al proceso de remoción/acarreo.                                                
+| Finalizado    | La sesión fue cerrada correctamente y no posee procesos pendientes asociados. 
+
+|       Evento        |                      Descripción 
+|                     | 
+| SolicitudCierre     | El usuario solicita finalizar una sesión activa. 
+| InspeccionOK        | El inspector confirma que el vehículo ya no se encuentra estacionado en el lugar indicado. 
+| InspeccionFallo     | El inspector confirma que el vehículo continúa estacionado en el lugar indicado. 
+| ConfirmacionAcarreo | El departamento de acarreo toma intervención sobre el vehículo. 
+| FinSesion           | El sistema confirma el cierre definitivo de la sesión. 
+
+| Estado Actual | Evento          |                  Acción                     | Nuevo Estado 
+|               |                 |                                             |  
+| Activo        | SolicitudCierre | Registrar `time_stop` e iniciar validación  | En Inspección 
+| En Inspección | InspeccionOK    | Finalizar sesión                            | Finalizado 
+| En Inspección | InspeccionFallo | Generar sanción sobre estado Activo         | Infracción 
+| Infracción    | SolicitudCierre | Registrar `time_stop` e iniciar validación  | En Inspección 
+| En Inspección | InspeccionFallo | Generar sanción sobre estado Infracción     | Penalización 
+| Penalización  | SolicitudCierre | Registrar `time_stop` e iniciar validación  | En Inspección 
+| En Inspección | InspeccionFallo | Iniciar protocolo de acarreo                | Acarreo 
+| Acarreo       | SolicitudCierre | Ignorar solicitud y cont con protocolo de acarreo | Acarreo 
+
+Relacionar:
+
+- RF
+- RN
+- Diagramas
+
+# Relacionados:
+
+- FSM Diagram - Vehículos y Sesiones
+- DG-008 - Flujo de Cierre de Sesión
+- RN-001 – Escalamiento Sancionatorio
+- RN-002 - Acarreo impide finalización directa
+- RN-003 – Conservación de Estado Previo
