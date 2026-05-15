@@ -1,0 +1,59 @@
+# UC-009 – Finalizar Sesión
+
+## Objetivo
+
+Procesar la finalización de una sesión de estacionamiento válida, calculando el último intervalo, registrando la sesión y dejando disponible la información necesaria para cobros e infracciones.
+
+## Actor primario
+
+- Usuario
+
+## Actores secundarios
+
+- Sistema de Cobros
+- Sistema de Infracciones
+
+## Disparador
+
+El Sistema recibe un evento de FIN DE SESIÓN válido.
+
+## Precondiciones
+
+- Debe existir una sesión validada para finalizar.
+- La sesión debe encontrarse autorizada para cierre.
+
+# Flujo principal
+
+1. El Sistema recibe el evento de FIN DE SESIÓN.
+2. El Sistema calcula el tiempo correspondiente al último intervalo de estacionamiento.
+3. El Sistema calcula el monto final de la sesión.
+4. El Sistema registra la sesión como finalizada.
+5. El Sistema deja disponible la información para módulos de cobros e infracciones.
+6. El Sistema verifica el estado final del vehículo.
+7. El Sistema notifica al Usuario la finalización de la sesión.
+8. El caso de uso finaliza.
+
+# Flujos alternativos
+
+## FA-FP06 – Gestión de infracción
+
+**Origen:** Paso 6 del Flujo Principal.
+
+1. El Sistema determina que corresponde iniciar una gestión de infracción.
+2. El Sistema inicia el proceso correspondiente de gestión de infracción.
+3. El flujo retorna al paso 7 del Flujo Principal.
+
+# Postcondiciones
+
+- La sesión queda registrada como finalizada.
+- La información queda disponible para procesamiento posterior.
+- El Usuario recibe una notificación de cierre.
+- El resultado del procesamiento queda registrado.
+
+# Requerimientos relacionados
+
+- RF-009 – Finalización de Sesión
+
+# Diagramas relacionados
+
+- DG-009 – Flujo de Finalización de Sesión
