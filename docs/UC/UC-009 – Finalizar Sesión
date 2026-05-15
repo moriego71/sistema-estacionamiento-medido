@@ -53,6 +53,8 @@ El Sistema recibe un evento de FIN DE SESIÓN válido.
 # Requerimientos relacionados
 
 - RF-009 – Finalización de Sesión
+- DG-009 - Finalizar Sesión
+- RN-002 - Acarreo impide finalización directa
 
 # Diagramas relacionados
 
