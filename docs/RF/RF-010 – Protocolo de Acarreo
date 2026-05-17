@@ -1,5 +1,7 @@
 ## Descripción
 
+## Descripción
+
 Cuando un vehículo ingresa en *estado de acarreo:*
 
 - *El Sistema* debe iniciar el Protocolo de Acarreo.
@@ -23,7 +25,6 @@ Cuando un vehículo ingresa en *estado de acarreo:*
 
 ## Relacionados
 
-- UC-010 – Protocolo de Acarreo
 - DG-010 – Flujo de Protocolo de Acarreo
 - RF-009 – Fin de Sesión
 - RN-002 – Acarreo impide finalización directa

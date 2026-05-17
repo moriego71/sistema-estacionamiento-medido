@@ -40,7 +40,7 @@ El Sistema recibe un evento de FIN DE SESIÓN válido.
 **Origen:** Paso 2 del Flujo Principal.
 
 1. El Sistema detecta que el estado final del vehículo corresponde a acarreo.
-2. El Sistema inicia Protocolo de Acarreo (el flujo pasa a UC-010).
+2. El Sistema inicia Protocolo de Acarreo.
 3. El caso de uso finaliza.
 
 # Postcondiciones
