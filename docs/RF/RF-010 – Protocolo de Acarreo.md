@@ -11,7 +11,9 @@ Cuando un vehículo ingresa en *estado de acarreo:*
 
 ## Criterios de aceptación
 
-- *El Sistema* debe calcular el tiempo correspondiente al último intervalo de estacionamiento al finalizar una sesión.
+- *El Sistema* debe enviar solicitud de Acarreo al Departamento de Acarreo.
+- *El Sistema* debe esperar confirmación deL Departamento de Acarreo de que el vehículo fué retirado por la grua y emitir un Timestop de finalizacion del último intervalo de estacionamiento.
+- *El Sistema* debe calcular el tiempo correspondiente al último intervalo de estacionamiento.
 - *El Sistema* debe calcular el saldo final correspondiente al último intervalo (tarifa del intervalo * tiempo consumido / tiempo del intervalo).
 - *El Sistema* debe confeccionar la infración sumando:
     - saldo final

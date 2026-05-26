@@ -21,24 +21,29 @@ El Usuario solicita finalizar una sesión de estacionamiento activa desde la apl
 
 - El Usuario debe encontrarse autenticado.
 - Debe existir una sesión activa asociada al vehículo.
-- El vehículo debe encontrarse en un estado válido para solicitar cierre de sesión.
 
 # Flujo principal
 
 1. El Usuario solicita el cierre de sesión.
-2. El Sistema registra el time_stop.
-3. El Sistema inicia el proceso de validación.
-4. El Sistema solicita una inspección del vehículo.
-5. El Inspector verifica la situación del vehículo.
-6. Si el Inspector confirma que el vehículo ya no se encuentra estacionado:
-    - El Sistema finaliza la sesión.
+2. El Sistema verifica que estado actual del vehículo no sea Acarreo.
+3. El Sistema registra el time_stop.
+4. El Sistema inicia el proceso de validación.
+5. El Sistema solicita una inspección del vehículo.
+6. El Inspector verifica la situación del vehículo.
+7. Si el Inspector confirma que el vehículo ya no se encuentra estacionado:
+    - El Sistema pasa a "Finalizar Sesión".
     - El Sistema deja disponible la información para módulos de cobros e infracciones.
-7. El caso de uso finaliza.
+8. El caso de uso finaliza.
+   
 
 # Flujos alternativos
 
-## FA-FP06 – Cierre inválido
-
+## FA-FP02 – En Estado de Acarreo
+1. El Sistema detecte que estado actual del vehículo es Acarreo.
+2. El Sistema rechaza Solicitude de Cierre
+3. Fin del caso de uso.
+   
+## FA-FP07 – Cierre inválido.
 1. El Inspector informa que el vehículo continúa estacionado.
 2. El Sistema rechaza el cierre de sesión.
 3. El Sistema aplica la transición de estado sancionatoria correspondiente.
