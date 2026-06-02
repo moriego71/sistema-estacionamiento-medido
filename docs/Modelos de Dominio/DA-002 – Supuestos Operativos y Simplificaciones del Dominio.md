@@ -103,6 +103,10 @@ El sistema no modela tiempos reales asociados a:
 
 ---
 
+## SD-005 – Simplificación asociación usuario/vehículo
+
+Para la Etapa 1 se asume que cada vehículo se encuentra asociado a una única cuenta de usuario responsable de la gestión de saldo, estacionamiento e infracciones. No se modelan esquemas de propiedad compartida ni múltiples usuarios operando sobre un mismo vehículo.
+
 # 3. Restricciones de Alcance de Etapa 1
 
 ## RA-001 – Ausencia de integración IoT
