@@ -167,7 +167,7 @@ Donde:
 ```text
 Importe de Espera =
 Cantidad de Intervalos de Espera ×
-Tarifa correspondiente al estado vigente
+Tarifa correspondiente al estado sancionatotiro vigente de la sesión.
 ```
 
 El Sistema debe verificar que el saldo disponible resulte suficiente para cubrir el Monto Final calculado.
