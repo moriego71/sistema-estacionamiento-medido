@@ -255,7 +255,102 @@ Monto Final = $400
 
 ---
 
-## 10. Relacionados
+## 10. Decisión de Modelado – Estados Sancionatorios
+
+### Objetivo
+
+Establecer la pertenencia y el alcance de los estados sancionatorios utilizados por el Sistema Inteligente de Estacionamiento Medido Urbano.
+
+---
+
+### Definición
+
+Los estados sancionatorios forman parte del ciclo de vida de una Sesión de Estacionamiento.
+
+No constituyen un atributo persistente del Vehículo.
+
+Cada nueva sesión inicia en estado **Activo**, independientemente de las sanciones o infracciones registradas en sesiones anteriores.
+
+---
+
+### Estados Sancionatorios
+
+Durante una sesión activa pueden producirse las siguientes transiciones:
+
+```text
+Activo
+   ↓
+Infracción
+   ↓
+Penalización
+   ↓
+Acarreo
+```
+
+Las transiciones se encuentran definidas por:
+
+* RN-001 – Escalamiento Sancionatorio
+* RN-005 – Escalamiento por Falta de Regularización de Saldo
+
+---
+
+### Alcance Temporal
+
+El estado sancionatorio existe únicamente mientras la sesión permanece activa.
+
+Al finalizar la sesión:
+
+* el estado sancionatorio deja de existir;
+* no se transfiere a futuras sesiones;
+* no modifica el estado inicial de un nuevo estacionamiento.
+
+Por lo tanto, toda nueva sesión comienza en estado **Activo**.
+
+---
+
+### Relación con las Infracciones
+
+Las infracciones generadas durante una sesión pueden registrarse de forma permanente y asociarse a la patente del vehículo.
+
+Dichos registros constituyen historial administrativo y permiten:
+
+* consultas posteriores;
+* auditoría;
+* trazabilidad;
+* futuras integraciones institucionales.
+
+Sin embargo, ese historial no participa del cálculo del estado inicial de una nueva sesión.
+
+---
+
+### Consecuencia para el Modelo de Dominio
+
+Se distinguen dos conceptos independientes:
+
+#### Estado Operativo de la Sesión
+
+Describe la situación actual de una sesión de estacionamiento.
+
+Ejemplos:
+
+* Activa
+* En Inspección
+* Finalizada
+
+#### Historial de Infracciones
+
+Describe registros persistentes asociados a una patente.
+
+Ejemplos:
+
+* infracciones pendientes;
+* infracciones abonadas;
+* infracciones históricas.
+
+El historial constituye información de consulta y persistencia, mientras que el estado sancionatorio pertenece exclusivamente al ciclo de vida de la sesión.
+
+
+## 11. Relacionados
 
 ### Requerimientos Funcionales
 
