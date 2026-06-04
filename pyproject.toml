@@ -1,0 +1,9 @@
+[project]
+name = "sistema-estacionamiento-medido"
+version = "0.1.0"
+description = "Sistema Inteligente de Estacionamiento Medido Urbano"
+requires-python = ">=3.13"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
