@@ -1,0 +1,38 @@
+US-001 Registrar Usuario
+Descripción:
+Criterios de Aceptación:
+Estado:
+
+
+
+Modelo de ejemplo:
+US-017 Iniciar Sesión de Estacionamiento
+
+Estado:
+    Diseñada
+
+Prioridad:
+    Alta
+
+RF Asociadas:
+    RF-007
+
+UC Asociadas:
+    UC-007
+
+RN Asociadas:
+    RN-001
+
+Criterios de Aceptación:
+
+CA-01
+El usuario puede seleccionar una patente registrada.
+
+CA-02
+El sistema valida saldo disponible.
+
+CA-03
+El sistema registra timestamp de inicio.
+
+CA-04
+La sesión queda en estado Activa.
